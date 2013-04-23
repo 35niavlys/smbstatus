@@ -1,0 +1,23 @@
+.center {
+	text-align: center;
+}
+
+.ip {
+	float: right;
+}
+
+.ui-field-contain, fieldset.ui-field-contain {
+	padding: 0;
+}
+
+.ui-block-a {
+	padding-right: 100px !important;
+	width: 100% !important;
+}
+
+.ui-block-b {
+        float: right !important;
+	margin-top: -16px !important;
+	position: relative !important;
+	width: 100px !important;
+}
