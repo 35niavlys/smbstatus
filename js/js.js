@@ -43,7 +43,7 @@ function alert_ajax(xhr)
 		result += "<span class=\"imgkill\" title=\"kill\" ></span>";
 		result += "</a>";
 		result += "<a title=\"" + users.item(i).getAttribute("pid") + "\" style=\"margin-left: 20px\">" + users.item(i).getAttribute("machine") + " ("+users.item(i).getAttribute("username")+")</a></div>";
-		result += "<div class=\"ui-block-b\"><a class=\"ip\" href=\"https://resel.fr/annuaire/index.php?action=search&chaine="+users.item(i).getAttribute("ip")+"\" target=\"_blank\">"+users.item(i).getAttribute("ip")+"</a></div>";
+		result += "<div class=\"ui-block-b\"><a class=\"ip\">"+users.item(i).getAttribute("ip")+"</a></div>";
 		result += "</div></li>";
 
 		var services = users.item(i).getElementsByTagName("service");
