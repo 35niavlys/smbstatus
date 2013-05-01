@@ -22,7 +22,6 @@
 	        <ul id="message" data-role="listview" data-inset="true">
 		</ul>
 	    </div>
-
 	    <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" class="ui-corner-all">
 		<div data-role="header" data-theme="a" class="ui-corner-top">
         	    <h1>Kill this user?</h1>
@@ -37,23 +36,26 @@
 
 	    <div data-role="popup" id="afterKill" class="ui-corner-all">
 		<div id="afterKillText" data-theme="d" class="ui-corner-bottom ui-content">
-    		    User killed...
-		</div>
-	    </div>
+    		User killed...
 	</div>
-	<script>
-	    $(document).ready(function() {
-		ajax();
-		var myswitch = $("select#slider");
-		myswitch[0].selectedIndex = 1;
-		myswitch.slider("refresh");
-		setInterval(
-		    function ()
-		    {
-			if(myswitch[0].value == "on")
-			    ajax();
-		    }, 5000);
-	    });
-	</script>
+</div>
+
+	    <!--footer data-role="footer" role="contentinfo">
+	    </footer--> 
+	</div>
+<script>
+$(document).ready(function() {
+ajax();
+var myswitch = $("select#slider");
+myswitch[0].selectedIndex = 1;
+myswitch.slider("refresh");
+setInterval(
+    function ()
+    {
+	if(myswitch[0].value == "on")
+	    ajax();
+    }, 5000);
+});
+</script>
     </body>
 </html>

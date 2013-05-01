@@ -18,13 +18,13 @@ function ajax()
     {
         xhr = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xhr.onreadystatechange = function() { ajax_refresh(xhr); };
+    xhr.onreadystatechange = function() { alert_ajax(xhr); };
  
-    xhr.open("GET", "smbstatustoxml.php", true);
+    xhr.open("GET", "xml.php", true);
     xhr.send(null);
 }
  
-function ajax_refresh(xhr)
+function alert_ajax(xhr)
 {
     if (xhr.readyState==4) 
     {
@@ -40,10 +40,10 @@ function ajax_refresh(xhr)
 		result += "<div data-role=\"content\"><div class=\"ui-grid-a\">"
 		result += "<div class=\"ui-block-a\">";
 		result += "<a href=\"#popupDialog\" onClick=\"javascript:pid=" + users.item(i).getAttribute("pid") + "\" data-rel=\"popup\" data-position-to=\"window\" >";
-		result += "<img class=\"imgkill\" src=\"./img/remove.gif\" alt=\"kill\" />";
+		result += "<span class=\"imgkill\" title=\"kill\" ></span>";
 		result += "</a>";
-		result += "<a title=\"" + users.item(i).getAttribute("pid") + "\" style=\"margin-left: 12px\">" + users.item(i).getAttribute("machine") + " ("+users.item(i).getAttribute("username")+")</a></div>";
-		result += "<div class=\"ui-block-b\"><a class=\"ip\">"+users.item(i).getAttribute("ip")+"</a></div>";
+		result += "<a title=\"" + users.item(i).getAttribute("pid") + "\" style=\"margin-left: 20px\">" + users.item(i).getAttribute("machine") + " ("+users.item(i).getAttribute("username")+")</a></div>";
+		result += "<div class=\"ui-block-b\"><a class=\"ip\" href=\"https://resel.fr/annuaire/index.php?action=search&chaine="+users.item(i).getAttribute("ip")+"\" target=\"_blank\">"+users.item(i).getAttribute("ip")+"</a></div>";
 		result += "</div></li>";
 
 		var services = users.item(i).getElementsByTagName("service");
@@ -63,6 +63,7 @@ function ajax_refresh(xhr)
 
 		    result += "</li>";
 		}
+
             }
 	}
 	else
