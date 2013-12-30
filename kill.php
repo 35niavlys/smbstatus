@@ -1,5 +1,5 @@
 <?
     if(isset($_GET['kill'])){
-	echo shell_exec("sudo ./smbkill ".$_GET['kill']." 2>&1");
+		echo shell_exec("sudo ./smbkill ".escapeshellcmd($_GET['kill'])." 2>&1");
     }
 ?>
